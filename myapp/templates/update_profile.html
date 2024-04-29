@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>ProfileAnalyzer</h1>
+            </div>
+            <div class="menu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="form-container">
+            <h2>Edit Profile</h2>
+            <form action="{{ url_for('update_profile', profile_id=profile['_id']) }}" method="POST">
+                <div class="form-group">
+                    <label for="account">Account Name:</label>
+                    <input type="text" id="account" name="account" value="{{ profile['account'] }}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="followers">Followers:</label>
+                    <input type="number" id="followers" name="followers" value="{{ profile['followers'] }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="posts_count">Posts Count:</label>
+                    <input type="number" id="posts_count" name="posts_count" value="{{ profile['posts_count'] }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="avg_engagement">Average Engagement:</label>
+                    <input type="text" id="avg_engagement" name="avg_engagement" value="{{ profile['avg_engagement'] }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="external_url">External URL:</label>
+                    <input type="url" id="external_url" name="external_url" value="{{ profile['external_url'] }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="biography">Biography:</label>
+                    <textarea id="biography" name="biography">{{ profile['biography'] }}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="business_category_name">Business Category Name:</label>
+                    <input type="text" id="business_category_name" name="business_category_name" value="{{ profile['business_category_name'] }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="category_name">Category Name:</label>
+                    <input type="text" id="category_name" name="category_name" value="{{ profile['category_name'] }}">
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Update Profile">
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Profile Analyzer. All rights reserved.</p>
+    </footer>
+</body>
+</html>

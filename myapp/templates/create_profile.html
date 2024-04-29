@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>ProfileAnalyzer</h1>
+            </div>
+            <div class="menu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h2>Create New Profile</h2>
+        <form action="{{ url_for('create_profile') }}" method="POST">            
+            <div class="form-group">
+                <label for="account">Account Name:</label>
+                <input type="text" id="account" name="account" placeholder="Account Name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="followers">Followers:</label>
+                <input type="number" id="followers" name="followers" placeholder="Number of Followers" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="posts_count">Posts Count:</label>
+                <input type="number" id="posts_count" name="posts_count" placeholder="Number of Posts" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="is_business_account">Is Business Account:</label>
+                <select id="is_business_account" name="is_business_account">
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="is_professional_account">Is Professional Account:</label>
+                <select id="is_professional_account" name="is_professional_account">
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="is_verified">Is Verified:</label>
+                <select id="is_verified" name="is_verified">
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="avg_engagement">Average Engagement:</label>
+                <input type="text" id="avg_engagement" name="avg_engagement" placeholder="Average Engagement" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="external_url">External URL:</label>
+                <input type="url" id="external_url" name="external_url" placeholder="http://example.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="biography">Biography:</label>
+                <textarea id="biography" name="biography" placeholder="Biography"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="business_category_name">Business Category Name:</label>
+                <input type="text" id="business_category_name" name="business_category_name" placeholder="Business Category">
+            </div>
+            
+            <div class="form-group">
+                <label for="category_name">Category Name:</label>
+                <input type="text" id="category_name" name="category_name" placeholder="Profile Category">
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Create Profile">
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Profile Analyzer. All rights reserved.</p>
+    </footer>
+</body>
+</html>

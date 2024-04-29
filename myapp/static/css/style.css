@@ -1,0 +1,218 @@
+/* General styles for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav .logo h1 {
+    margin: 0;
+}
+
+nav .menu a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav .menu a:hover {
+    text-decoration: underline;
+}
+
+/* Main content area styles */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.create-profile form {
+    margin-bottom: 20px;
+}
+
+.create-profile input,
+.create-profile button {
+    padding: 10px;
+    margin: 5px 0;
+    display: block;
+    width: 95%;
+}
+
+/* Button styles within the .create-profile class */
+.create-profile button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-list h2 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.profile-item {
+    list-style: none;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Last item in the profile list does not have a border */
+.profile-item:last-child {
+    border-bottom: none;
+}
+
+.profile-content h3 {
+    margin-top: 0;
+}
+
+.profile-actions a {
+    text-decoration: none;
+    color: #5cb85c;
+    margin-right: 10px;
+}
+
+.profile-actions a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    nav .menu a {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .create-profile input,
+    .create-profile button {
+        width: 100%;
+    }
+}
+
+/* Container class for centering content */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Styles for form labels */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input styles to make them look uniform */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #5cb85c;
+}
+
+.form-submit {
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.form-submit:hover {
+    background-color: #4cae4c;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-style {
+    width: 100%;
+    max-width: 500px; /* or your preferred max width */
+    margin: 0 auto;
+    padding: 1em;
+    background: #FFFFFF;
+    border-radius: 3px;
+}
+
+.form-group {
+    margin: 0 0 1em 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: .5em;
+    color: #333333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="url"],
+.form-group select,
+.form-group textarea {
+    padding: .5em;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    width: 100%;
+    box-sizing: border-box; /* Makes sure padding does not add to the width */
+}
+
+.form-group input[type="submit"] {
+    padding: 1em;
+    border-radius: 3px;
+    width: auto;
+    background: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-group input[type="submit"]:hover {
+    background: #4cae4c;
+}
+

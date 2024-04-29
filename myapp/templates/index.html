@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>ProfileAnalyzer</h1>
+            </div>
+            <div class="menu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="profile-list">
+            <h2>Profiles</h2>
+            <a href="/new">Create New Profile</a>
+            <form action="{{ url_for('search') }}" method="GET" class="search-form">
+                <input type="text" name="query" placeholder="Search profiles..." required>
+                <button type="submit">Search</button>
+            </form>
+            <ul>
+                {% for profile in profiles %}
+                <li class="profile-item">
+                    <div class="profile-content">
+                        <h3>{{ profile.account or 'No account name' }}</h3>
+                        <p>Followers: {{ profile.followers or 'No followers' }}</p>
+                        <p>Posts Count: {{ profile.posts_count or 'No post count' }}</p>
+                        <p>Engagement: {{ profile.avg_engagement or 'No engagement info' }}</p>
+                        <p>Business Category: {{ profile.business_category_name or 'No business category' }}</p>
+                        <p>Profile Category: {{ profile.category_name or 'No profile category' }}</p>
+                        <p>Biography: {{ profile.biography or 'No biography' }}</p>
+                        <a href="{{ profile.external_url or '#' }}">Visit Page</a>
+                        <a href="/update/{{ profile._id }}">Edit</a>
+                        <!-- Updated Delete Link -->
+                        <a href="#" onclick="deleteProfile('{{ profile._id }}'); return false;">Delete</a>
+                    </div>
+                </li>
+                {% else %}
+                <li>No profiles found.</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+    <script>
+        function deleteProfile(profileId) {
+            if (confirm('Are you sure you want to delete this profile?')) {
+                var form = document.createElement('form');
+                form.method = 'POST';
+                form.action = '/delete/' + profileId;
+            
+                document.body.appendChild(form);
+                form.submit();
+            }
+        }
+    </script>
+    <footer>
+        <p>&copy; 2024 Profile Analyzer. All rights reserved.</p>
+    </footer>
+</body>
+</html>
