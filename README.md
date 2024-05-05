@@ -1,6 +1,7 @@
 Prerequisites
+[check requirements.txt]
 
-Python 3.8 or higher
+Python 3.8 or higher 
 Flask
 MongoDB
 pymongo
