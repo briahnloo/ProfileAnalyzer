@@ -22,7 +22,7 @@ def new_profile():
         }
         mongo.db.profiles.insert_one(profile_data)
         return redirect(url_for('home'))
-    return render_template('create_profile.html')  # You'll need to create this template
+    return render_template('create_profile.html') 
 
 @app.route('/create', methods=['POST'])
 def create_profile():
